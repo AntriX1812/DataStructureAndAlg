@@ -21,7 +21,7 @@ public class LongestString {
 
 	
 	public static void main(String[] args) {
-		String arr[] = {"Shanu","kokila","Yuvraj","Anaisha","Madhav","Antriksh"};
+		String arr[] = {"Ankit","Pulkit","Santiago","Mark","Stephen","Antriksh"};
 		System.out.println(longestString(arr));
 	}
 }
