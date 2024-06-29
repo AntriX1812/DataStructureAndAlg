@@ -9,7 +9,8 @@
 package com.study.bigO;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Set;
 
 public class TwoSum {
@@ -29,18 +30,17 @@ public class TwoSum {
 
 	public int[] twoSum(int[] nums, int target) {
 
-		Set set = new LinkedHashSet();
+		Map<Integer,Integer> set = new LinkedHashMap<Integer,Integer>();
 		for (int i = 0; i < nums.length; i++) {
 			int complement = target - nums[i];
-			if (set.contains(complement)) {
-				System.out.println(set);
-				int indx = getIndex(set,complement);
+			if (set.containsKey(complement)) {
+				int indx = set.get(complement);
 				int[] array = {indx,i};
 				
 				return array;
 
 			} else {
-				set.add(nums[i]);
+				set.put(nums[i],i);
 			}
 		}
 
@@ -48,20 +48,12 @@ public class TwoSum {
 
 	}
 
-	public int getIndex(Set set, int element) {
-		if (set != null && set.size() > 0) {
-			ArrayList al = new ArrayList();
-			al.addAll(set);
-			for (int i = 0; i < al.size(); i++) {
-				if ((int)al.get(i) == element) {
-					System.out.println("Here");
-					return i;
-				}
-			}
-
-		} else {
-			return -1;
-		}
-		return -1;
-	}
+	/*
+	 * public int getIndex(Set set, int element) { if (set != null && set.size() >
+	 * 0) { ArrayList al = new ArrayList(); al.addAll(set); for (int i = 0; i <
+	 * al.size(); i++) { if ((int)al.get(i) == element) {
+	 * System.out.println("Here"); return i; } }
+	 * 
+	 * } else { return -1; } return -1; }
+	 */
 }
