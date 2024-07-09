@@ -33,18 +33,8 @@ public class MaxIceCream {
 				if (costs.length == 1 && costs[0] <= coins) {
 					return 1;
 				} else {
-					// Sort array in ascending 2,1,2,3,4,1
 
-					// int arrayNew[] = new int[costs.length];
-					int temp = 0;
-					/*
-					 * for (int i = 0; i < costs.length; i++) { for (int j = i + 1; j <
-					 * costs.length; j++) { if (costs[i] > costs[j]) { temp = costs[i]; costs[i] =
-					 * costs[j]; costs[j] = temp;
-					 * 
-					 * } } }
-					 */
-                   Arrays.sort(costs);
+					Arrays.sort(costs);
 					for (int i = 0; i < costs.length; i++) {
 
 						if (sum + costs[i] <= coins) { // System.out.println("costs[i]"+costs[i]);
